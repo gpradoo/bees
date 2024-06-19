@@ -65,13 +65,40 @@ Access the Airflow web interface at http://localhost:8080 and log in with the fo
 Username: admin
 Password: admin
 
+### 7. Running tests
+
+To run the tests for the data pipeline, ensure that you have Docker and Docker Compose installed on your machine. Follow these steps:
+
+Clone the repository to your local machine:
+
+   ```bash
+   git clone https://github.com/your-username/airflow-docker.git
+   cd airflow-docker
+   ```
+
+Build and start the Docker containers:
+
+   ```bash
+   docker-compose up --build
+   ```
+
+To run the tests, execute the following command inside the container:
+
+    ```bash
+    docker-compose run --rm my_airflow_pipeline_test
+    ```
+
+The tests will verify the functionality of the data pipeline, including data extraction, transformation, and storage in different layers (bronze, silver, gold). If any tests fail, detailed information will be provided to help diagnose and fix the issues.
+
 ### DAG Structure
 
 The data pipeline is defined in the DAG data_pipeline and consists of the following tasks:
 
-get_data_to_bronze: Extracts data from an API and saves it in the bronze directory.
-transform_2_silver: Transforms raw data and saves it in the silver directory.
-gold_view: Aggregates transformed data and saves it in the gold directory.
+- get_data_to_bronze: Extracts data from an API and saves it in the bronze directory.
+
+- transform_2_silver: Transforms raw data and saves it in the silver directory.
+
+- gold_view: Aggregates transformed data and saves it in the gold directory.
 
 
 Contributions are welcome! Feel free to open issues and pull requests.
