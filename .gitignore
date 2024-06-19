@@ -1,0 +1,39 @@
+# Ignore logs
+logs/*
+!logs/.gitkeep
+
+# Ignore data directories
+data/*
+!data/.gitkeep
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Ignore Jupyter/IPython Notebook checkpoints
+.ipynb_checkpoints
+
+# Ignore macOS hidden files
+.DS_Store
+
+# Ignore environment files
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Ignore compiled files
+*.egg-info/
+*.eggs/
+
+# Ignore Airflow specific files
+airflow.cfg
+unittests.cfg
+
+# Ignore Docker files
+docker-compose.override.yml
+*.env
+
