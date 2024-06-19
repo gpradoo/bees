@@ -23,7 +23,7 @@ dag = DAG(
 'data_pipeline',
 default_args=default_args,
 description='Pipeline de Dados: API para Camadas de Dados',
-schedule_interval=timedelta(minutes=15),
+schedule_interval=timedelta(hours=6),
 )
 
 url = 'https://api.openbrewerydb.org/breweries'

@@ -22,15 +22,16 @@ RUN apt-get update \
 
 USER airflow
 
-# Install pyarrow with the correct version
-RUN pip install --upgrade pip
-RUN pip install pyarrow==10.0.1
-RUN pip install apache-airflow
-RUN pip install datetime
-RUN pip install requests
-RUN pip install pandas
+# Copy requirements.txt to the container
+COPY requirements.txt .
 
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Any other dependencies your project requires
-# RUN pip install <other-dependencies>
+# Copy the application code and tests to the container
+COPY dags/ dags/
+COPY tests/ tests/
+
+# Define the entrypoint to run the tests
+CMD ["python", "-m", "unittest", "discover", "-s", "tests"]
 
