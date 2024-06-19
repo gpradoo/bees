@@ -84,9 +84,9 @@ Build and start the Docker containers:
 
 To run the tests, execute the following command inside the container:
 
-    ```bash
+   
     docker-compose run --rm my_airflow_pipeline_test
-    ```
+ 
 
 The tests will verify the functionality of the data pipeline, including data extraction, transformation, and storage in different layers (bronze, silver, gold). If any tests fail, detailed information will be provided to help diagnose and fix the issues.
 
